@@ -1,19 +1,9 @@
-/*
-|--------------------------------------------------------------------------
-| Context Formatter
-|--------------------------------------------------------------------------
-|
-| Converts application data into clean, consistent context structures
-| that can be consumed by the AI prompt builder and AI services.
-|
-*/
+// Context Formatter
+// Converts application data into clean, consistent context structures
+// that can be consumed by the AI prompt builder and AI services.
 
 
-/*
-|--------------------------------------------------------------------------
-| Safe Value
-|--------------------------------------------------------------------------
-*/
+// Safe Value
 
 const safeValue = (
     value,
@@ -34,11 +24,7 @@ const safeValue = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Safe String
-|--------------------------------------------------------------------------
-*/
+// Safe String
 
 const safeString = (
     value,
@@ -59,14 +45,7 @@ const safeString = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Convert Mongoose Document
-|--------------------------------------------------------------------------
-|
-| Converts Mongoose documents into plain JavaScript objects.
-|
-*/
+// Convert Mongoose Document
 
 const toPlainObject = (
     data
@@ -102,11 +81,7 @@ const toPlainObject = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Student Profile
-|--------------------------------------------------------------------------
-*/
+// Format Student Profile
 
 const formatStudentProfile = (
     profile
@@ -189,11 +164,7 @@ const formatStudentProfile = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Skills
-|--------------------------------------------------------------------------
-*/
+// Format Skills
 
 const formatSkills = (
     skills = []
@@ -273,11 +244,7 @@ const formatSkills = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Interests
-|--------------------------------------------------------------------------
-*/
+// Format Interests
 
 const formatInterests = (
     interests = []
@@ -345,11 +312,7 @@ const formatInterests = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Certifications
-|--------------------------------------------------------------------------
-*/
+// Format Certifications
 
 const formatCertifications = (
     certifications = []
@@ -417,11 +380,7 @@ const formatCertifications = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Student Progress
-|--------------------------------------------------------------------------
-*/
+// Format Student Progress
 
 const formatStudentProgress = (
     progress
@@ -484,11 +443,7 @@ const formatStudentProgress = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Complete Student Context
-|--------------------------------------------------------------------------
-*/
+// Format Complete Student Context
 
 const formatStudentContext = ({
     profile,
@@ -530,11 +485,7 @@ const formatStudentContext = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Career
-|--------------------------------------------------------------------------
-*/
+// Format Career
 
 const formatCareer = (
     career
@@ -605,11 +556,7 @@ const formatCareer = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Roadmap
-|--------------------------------------------------------------------------
-*/
+// Format Roadmap
 
 const formatRoadmap = (
     roadmap
@@ -703,11 +650,7 @@ const formatRoadmap = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Skill Gap
-|--------------------------------------------------------------------------
-*/
+// Format Skill Gap
 
 const formatSkillGap = (
     skillGap
@@ -767,11 +710,7 @@ const formatSkillGap = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Project
-|--------------------------------------------------------------------------
-*/
+// Format Project
 
 const formatProject = (
     project
@@ -839,11 +778,7 @@ const formatProject = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format GitHub Profile
-|--------------------------------------------------------------------------
-*/
+// Format GitHub Profile
 
 const formatGithubProfile = (
     github
@@ -917,11 +852,7 @@ const formatGithubProfile = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Conversation Message
-|--------------------------------------------------------------------------
-*/
+// Format Conversation Message
 
 const formatMessage = (
     message
@@ -973,11 +904,7 @@ const formatMessage = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format Conversation History
-|--------------------------------------------------------------------------
-*/
+// Format Conversation History
 
 const formatConversationHistory = (
     messages = [],
@@ -1001,11 +928,7 @@ const formatConversationHistory = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format RAG Document
-|--------------------------------------------------------------------------
-*/
+// Format RAG Document
 
 const formatRAGDocument = (
     document
@@ -1065,11 +988,7 @@ const formatRAGDocument = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format RAG Results
-|--------------------------------------------------------------------------
-*/
+// Format RAG Results
 
 const formatRAGResults = (
     documents = [],
@@ -1097,11 +1016,7 @@ const formatRAGResults = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format AI Context
-|--------------------------------------------------------------------------
-*/
+// Format AI Context
 
 const formatAIContext = ({
     student,
@@ -1161,11 +1076,7 @@ const formatAIContext = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Remove Empty Values
-|--------------------------------------------------------------------------
-*/
+// Remove Empty Values
 
 const removeEmptyValues = (
     object
@@ -1271,11 +1182,7 @@ const removeEmptyValues = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Convert Context To JSON
-|--------------------------------------------------------------------------
-*/
+// Convert Context To JSON
 
 const contextToJSON = (
     context
@@ -1290,11 +1197,7 @@ const contextToJSON = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Export
-|--------------------------------------------------------------------------
-*/
+// Export
 
 module.exports = {
 

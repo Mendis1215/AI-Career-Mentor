@@ -1,18 +1,8 @@
-/*
-|--------------------------------------------------------------------------
-| Prompt Builder
-|--------------------------------------------------------------------------
-|
-| Centralized utility for constructing prompts used by the AI service.
-|
-*/
+// Prompt Builder
+// Centralized utility for constructing prompts used by the AI service.
 
 
-/*
-|--------------------------------------------------------------------------
-| Safe String
-|--------------------------------------------------------------------------
-*/
+// Safe String
 
 const safeString = (
     value,
@@ -33,11 +23,7 @@ const safeString = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Format List
-|--------------------------------------------------------------------------
-*/
+// Format List
 
 const formatList = (
     items = []
@@ -92,11 +78,7 @@ const formatList = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Student Context
-|--------------------------------------------------------------------------
-*/
+// Build Student Context
 
 const buildStudentContext = (
     student = {}
@@ -149,11 +131,7 @@ ${JSON.stringify(progress, null, 2)}
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Career Context
-|--------------------------------------------------------------------------
-*/
+// Build Career Context
 
 const buildCareerContext = (
     career = null
@@ -215,11 +193,7 @@ ${safeString(
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Roadmap Context
-|--------------------------------------------------------------------------
-*/
+// Build Roadmap Context
 
 const buildRoadmapContext = (
     roadmap = null
@@ -268,11 +242,7 @@ ${formatList(
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Skill Gap Context
-|--------------------------------------------------------------------------
-*/
+// Build Skill Gap Context
 
 const buildSkillGapContext = (
     skillGap = null
@@ -322,11 +292,7 @@ ${safeString(
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Project Context
-|--------------------------------------------------------------------------
-*/
+// Build Project Context
 
 const buildProjectContext = (
     project = null
@@ -382,11 +348,7 @@ ${formatList(
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build GitHub Context
-|--------------------------------------------------------------------------
-*/
+// Build GitHub Context
 
 const buildGithubContext = (
     github = null
@@ -450,11 +412,7 @@ ${safeString(
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build RAG Context
-|--------------------------------------------------------------------------
-*/
+// Build RAG Context
 
 const buildRAGContext = (
     documents = []
@@ -519,11 +477,7 @@ ${formattedDocuments}
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Conversation History
-|--------------------------------------------------------------------------
-*/
+// Build Conversation History
 
 const buildConversationHistory = (
     messages = []
@@ -570,11 +524,7 @@ ${messages
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build System Instructions
-|--------------------------------------------------------------------------
-*/
+// Build System Instructions
 
 const buildSystemInstructions = ({
     task = "Answer the student's question.",
@@ -639,11 +589,7 @@ ${instructions
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Complete Prompt
-|--------------------------------------------------------------------------
-*/
+// Build Complete Prompt
 
 const buildPrompt = ({
     task,
@@ -728,11 +674,7 @@ RESPONSE REQUIREMENTS
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Chat Prompt
-|--------------------------------------------------------------------------
-*/
+// Build Chat Prompt
 
 const buildChatPrompt = ({
     student,
@@ -759,11 +701,7 @@ const buildChatPrompt = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Career Guidance Prompt
-|--------------------------------------------------------------------------
-*/
+// Build Career Guidance Prompt
 
 const buildCareerGuidancePrompt = ({
     student,
@@ -803,11 +741,7 @@ const buildCareerGuidancePrompt = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Roadmap Prompt
-|--------------------------------------------------------------------------
-*/
+// Build Roadmap Prompt
 
 const buildRoadmapPrompt = ({
     student,
@@ -850,11 +784,7 @@ const buildRoadmapPrompt = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Skill Gap Prompt
-|--------------------------------------------------------------------------
-*/
+// Build Skill Gap Prompt
 
 const buildSkillGapPrompt = ({
     student,
@@ -897,11 +827,7 @@ const buildSkillGapPrompt = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build Project Guidance Prompt
-|--------------------------------------------------------------------------
-*/
+// Build Project Guidance Prompt
 
 const buildProjectGuidancePrompt = ({
     student,
@@ -944,11 +870,7 @@ const buildProjectGuidancePrompt = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Build GitHub Analysis Prompt
-|--------------------------------------------------------------------------
-*/
+// Build GitHub Analysis Prompt
 
 const buildGithubAnalysisPrompt = ({
     student,
@@ -993,11 +915,7 @@ const buildGithubAnalysisPrompt = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Export
-|--------------------------------------------------------------------------
-*/
+// Export
 
 module.exports = {
 

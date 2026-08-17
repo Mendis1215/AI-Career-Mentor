@@ -1,80 +1,51 @@
+// Token Utilities
+// Utility functions for estimating and controlling token usage
+// within the AI service.
 /*
-|--------------------------------------------------------------------------
-| Token Utilities
-|--------------------------------------------------------------------------
-|
-| Utility functions for estimating and controlling token usage
-| within the AI service.
-|
-| NOTE:
-| These functions provide approximate token calculations.
-| The actual token usage returned by the AI provider should be
-| treated as the authoritative usage information.
-|
+NOTE:
+These functions provide approximate token calculations.
+The actual token usage returned by the AI provider should be
+treated as the authoritative usage information.
 */
 
 
-/*
-|--------------------------------------------------------------------------
-| Default Configuration
-|--------------------------------------------------------------------------
-*/
+// Default Configuration
 
 const DEFAULT_CONFIG = {
 
-    /*
-    | Approximate characters per token.
-    |
-    | This is only an estimation.
-    |
-    */
+    // Approximate characters per token.
+    // This is only an estimation.
 
     charactersPerToken: 4,
 
-    /*
-    | Default maximum input tokens.
-    */
+    // Default maximum input tokens.
 
     maxInputTokens: 12000,
 
-    /*
-    | Default maximum output tokens.
-    */
+    // Default maximum output tokens.
 
     maxOutputTokens: 2048,
 
-    /*
-    | Maximum conversation messages included in a prompt.
-    */
+    // Maximum conversation messages included in a prompt.
 
     maxConversationMessages: 20,
 
-    /*
-    | Maximum characters allowed for an individual message.
-    */
+    // Maximum characters allowed for an individual message.
 
     maxMessageCharacters: 6000,
 
-    /*
-    | Maximum characters allowed for one RAG document/chunk.
-    */
+    // Maximum characters allowed for one RAG document/chunk.
 
     maxRAGDocumentCharacters: 5000,
 
-    /*
-    | Maximum total RAG characters.
-    */
+    // Maximum total RAG characters.
 
     maxRAGCharacters: 30000
 
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Normalize Text
-|--------------------------------------------------------------------------
-*/
+// Normalize Text
 
 const normalizeText = (
     text
@@ -96,17 +67,8 @@ const normalizeText = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Estimate Tokens
-|--------------------------------------------------------------------------
-|
-| Rough estimation:
-|
-| tokens ≈ characters / charactersPerToken
-|
-|--------------------------------------------------------------------------
-*/
+// Estimate Tokens
+// Rough estimation: tokens ≈ characters / charactersPerToken
 
 const estimateTokens = (
     text,
@@ -138,11 +100,7 @@ const estimateTokens = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Estimate Multiple Texts
-|--------------------------------------------------------------------------
-*/
+// Estimate Multiple Texts
 
 const estimateTokensForTexts = (
     texts = [],
@@ -176,11 +134,7 @@ const estimateTokensForTexts = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Estimate Object Tokens
-|--------------------------------------------------------------------------
-*/
+// Estimate Object Tokens
 
 const estimateObjectTokens = (
     object,
@@ -224,11 +178,7 @@ const estimateObjectTokens = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Estimate Prompt Tokens
-|--------------------------------------------------------------------------
-*/
+// Estimate Prompt Tokens
 
 const estimatePromptTokens = (
     prompt
@@ -241,11 +191,7 @@ const estimatePromptTokens = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Calculate Token Budget
-|--------------------------------------------------------------------------
-*/
+// Calculate Token Budget
 
 const calculateTokenBudget = ({
     maxInputTokens =
@@ -308,11 +254,7 @@ const calculateTokenBudget = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Calculate Remaining Tokens
-|--------------------------------------------------------------------------
-*/
+// Calculate Remaining Tokens
 
 const calculateRemainingTokens = (
     maxTokens,
@@ -328,11 +270,7 @@ const calculateRemainingTokens = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Truncate Text
-|--------------------------------------------------------------------------
-*/
+// Truncate Text
 
 const truncateText = (
     text,
@@ -373,10 +311,7 @@ const truncateText = (
     }
 
 
-    /*
-    | Leave a small indication that the text
-    | has been truncated.
-    */
+    // Leave a small indication that the text has been truncated.
 
     const suffix =
         "... [truncated]";
@@ -400,11 +335,7 @@ const truncateText = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Truncate By Tokens
-|--------------------------------------------------------------------------
-*/
+// Truncate By Tokens
 
 const truncateByTokens = (
     text,
@@ -469,11 +400,7 @@ const truncateByTokens = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Limit Conversation History
-|--------------------------------------------------------------------------
-*/
+// Limit Conversation History
 
 const limitConversationHistory = (
     messages = [],
@@ -502,9 +429,7 @@ const limitConversationHistory = (
     }
 
 
-    /*
-    | Keep the most recent messages.
-    */
+    // Keep the most recent messages.
 
     return messages.slice(
         -limit
@@ -513,11 +438,7 @@ const limitConversationHistory = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Limit Message Length
-|--------------------------------------------------------------------------
-*/
+// Limit Message Length
 
 const limitMessageLength = (
     message,
@@ -559,11 +480,7 @@ const limitMessageLength = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Limit Conversation Message Lengths
-|--------------------------------------------------------------------------
-*/
+// Limit Conversation Message Lengths
 
 const limitConversationMessageLengths = (
     messages = [],
@@ -589,11 +506,7 @@ const limitConversationMessageLengths = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Limit RAG Document
-|--------------------------------------------------------------------------
-*/
+// Limit RAG Document
 
 const limitRAGDocument = (
     document,
@@ -626,11 +539,7 @@ const limitRAGDocument = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Limit RAG Documents
-|--------------------------------------------------------------------------
-*/
+// Limit RAG Documents
 
 const limitRAGDocuments = (
     documents = [],
@@ -740,11 +649,7 @@ const limitRAGDocuments = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Estimate Conversation Tokens
-|--------------------------------------------------------------------------
-*/
+// Estimate Conversation Tokens
 
 const estimateConversationTokens = (
     messages = []
@@ -787,11 +692,7 @@ const estimateConversationTokens = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Estimate RAG Tokens
-|--------------------------------------------------------------------------
-*/
+// Estimate RAG Tokens
 
 const estimateRAGTokens = (
     documents = []
@@ -825,16 +726,8 @@ const estimateRAGTokens = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Fit Texts Within Token Budget
-|--------------------------------------------------------------------------
-|
-| Adds texts sequentially until the estimated token budget
-| is reached.
-|
-|--------------------------------------------------------------------------
-*/
+// Fit Texts Within Token Budget
+// Adds texts sequentially until the estimated token budget is reached.
 
 const fitTextsWithinTokenBudget = (
     texts = [],
@@ -949,11 +842,7 @@ const fitTextsWithinTokenBudget = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Check Token Limit
-|--------------------------------------------------------------------------
-*/
+// Check Token Limit
 
 const exceedsTokenLimit = (
     text,
@@ -968,11 +857,7 @@ const exceedsTokenLimit = (
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Validate Token Configuration
-|--------------------------------------------------------------------------
-*/
+// Validate Token Configuration
 
 const validateTokenConfiguration = ({
     maxInputTokens =
@@ -1043,11 +928,7 @@ const validateTokenConfiguration = ({
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Get Default Configuration
-|--------------------------------------------------------------------------
-*/
+// Get Default Configuration
 
 const getDefaultTokenConfig = () => {
 
@@ -1060,11 +941,7 @@ const getDefaultTokenConfig = () => {
 };
 
 
-/*
-|--------------------------------------------------------------------------
-| Export
-|--------------------------------------------------------------------------
-*/
+// Export
 
 module.exports = {
 
